@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package rosiepb;
+
+
+message Envelope {
+  string type = 1; // Message type
+  bytes data = 2;  // Actual message data
+}
+
+message Pivot {
+  string ID = 1;
+  string name = 2;
+  repeated PivotConnection connections = 3;
+}
+
+message PivotInit {
+  string name = 1;
+  repeated string localAddresses = 2;
+  string responseID = 3; // Optional message id value
+}
+
+message Pivots {
+  repeated Pivot list = 1;
+}
+
+message PivotConnection {
+  string ID = 1;
+  // repeated Tunnel tunnels = 3;
+}
+
+message TCPTunnelInit {
+  string pivotName = 1;
+  string remoteAddress = 2;
+  int32 remotePort = 3;
+  string ID = 4;
+}
+
+message Data {
+  string tunnelID = 1;
+  bytes payload = 2;
+  bool EOF = 3;
+  string errors = 4;
+}
+
+message ExeFile {
+  string format = 1;
+  bytes data = 2;
+  string errors = 3;
+}
+
+message GenerateClientRequest {
+  string operatingSystem = 1;
+  string arch = 2;
+}
+
+message GeneratePivotRequest {
+  string operatingSystem = 1;
+  string arch = 2;
+}
