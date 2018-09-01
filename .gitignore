@@ -1,9 +1,16 @@
 .vscode/*
 
+# Binaries
 rosie
 rosie-server
 rosie-client
 rosie-pivot
+
+# Large static assets
+server/assets/src.zip
+server/assets/darwin/*.zip
+server/assets/linux/*.zip
+server/assets/windows/*.zip
 
 # Binaries for programs and plugins
 *.exe

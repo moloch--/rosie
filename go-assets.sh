@@ -23,6 +23,9 @@ cd go
 rm -rf $BLOAT_FILES
 zip -r ../src.zip ./src  # Zip up /src we only need to do this once
 rm -rf ./src
+rm -f ./pkg/tool/darwin_amd64/doc
+rm -f ./pkg/tool/darwin_amd64/tour
+rm -f ./pkg/tool/darwin_amd64/test2json
 cd ..
 cp -vv src.zip $REPO_DIR/server/assets/src.zip
 rm -f src.zip
@@ -40,6 +43,9 @@ tar xvf go$GO_VER.linux-amd64.tar.gz
 cd go
 rm -rf $BLOAT_FILES
 rm -rf ./src
+rm -f ./pkg/tool/linux_amd64/doc
+rm -f ./pkg/tool/linux_amd64/tour
+rm -f ./pkg/tool/linux_amd64/test2json
 cd ..
 zip -r linux-go.zip ./go
 cp -vv linux-go.zip $REPO_DIR/server/assets/linux/go.zip
@@ -52,6 +58,9 @@ unzip go$GO_VER.windows-amd64.zip
 cd go
 rm -rf $BLOAT_FILES
 rm -rf ./src
+rm -f ./pkg/tool/windows_amd64/doc.exe
+rm -f ./pkg/tool/windows_amd64/tour.exe
+rm -f ./pkg/tool/windows_amd64/test2json.exe
 cd ..
 zip -r windows-go.zip ./go
 cp -vv windows-go.zip $REPO_DIR/server/assets/windows/go.zip

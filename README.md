@@ -87,11 +87,11 @@ attacker <-TCP-> client <-protobuf/mTLS->              <-protobuf/mTLS-> pivot <
 
 ## Building From Scratch
 
-You'll want to compile from a MacOS or Linux machine, compiling from Windows should work but none of the scripts are designed to run on Windows.
+You'll want to compile from a MacOS or Linux machine, compiling from Windows should work but none of the scripts are designed to run on Windows (you can compile the Windows binaries from MacOS or Linux).
 
 Requirements:
 * Go v1.11 or later
-* Make, tar, wget, zip
+* Make, sed, tar, wget, zip
 
 Build thin server (for developement)
 
