@@ -1,7 +1,9 @@
 Rosie the Pivoter
 ==================
 
-Rosie the Privoter is a prototype general purpose secure network pivoting tool. Rosie uses mutual TLS for all connections between the client, server, and pivot. Certificates are generated on the fly and embedded within each client and pivot. All certificates are signed and managed automatically for you with a per-instance certificate authority.
+Rosie the Privoter is a _prototype_ general purpose secure network pivoting tool. Rosie uses mutual TLS for all connections between the client, server, and pivot. All certificates are signed and managed automatically for you with a per-instance certificate authority. Certificates are generated on the fly and embedded within each client and pivot binary, which are dynamically compiled by the server.
+
+__WARNING:__ This is still a prototype, expect bugs and unstable connections!
 
 ### Design Goals
 

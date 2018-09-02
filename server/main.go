@@ -124,7 +124,6 @@ func startPivotListener(bindIface string, port uint16) {
 
 func handlePivotConnection(connection net.Conn) {
 	defer connection.Close()
-
 	log.Printf("Pivot connection from %s", connection.RemoteAddr())
 	pivotConn := c2Connection{
 		Send: make(chan pb.Envelope),

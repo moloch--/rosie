@@ -32,8 +32,8 @@ const (
 	defaultServerIP    = `{{.DefaultServer}}`
 	defaultServerLport = 8444
 
-	timeout     = 30 * time.Second
-	readBufSize = 256 * 1024  // 64kb
+	timeout        = 30 * time.Second
+	readBufSize    = 256 * 1024 // 64kb
 	zeroReadsLimit = 10
 
 	// ---------------
@@ -206,7 +206,7 @@ func tcpTunnelInitHandler(broker *Broker, msg []byte) {
 	rConn, err := net.Dial("tcp", address)
 	if err == nil {
 		log.Printf("Connection successful, setting up tunnel")
-		
+
 		// Send empty data packet to kick-start connection
 		data, _ := proto.Marshal(&pb.Data{
 			TunnelID: tun.ID,
@@ -244,7 +244,7 @@ func tcpTunnelInitHandler(broker *Broker, msg []byte) {
 			dataPkt, _ := proto.Marshal(&pb.Data{
 				TunnelID: tun.ID,
 				Payload:  readBuf[:n],
-				EOF: err == io.EOF,
+				EOF:      err == io.EOF,
 			})
 			broker.SendMessage(DataMsg, dataPkt)
 			if err == io.EOF {
