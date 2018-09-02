@@ -35,10 +35,10 @@ The client will already have the proper certificates embedded within the binary.
 
 #### Generating Pivots
 
-You can generate pivot binaries for any supported platform by using the `generate-pivot` client command, for example:
+You can generate pivot binaries for any supported platform by using the `pivot` client command, for example:
 
 ```
-$ ./rosie generate-pivot -os windows -output pivot.exe
+$ ./rosie pivot -os windows -output pivot.exe
 [*] Generating new pivot binary ...
 [*] Compiler target windows/amd64
 [*] New pivot (windows/amd64): pivot.exe
